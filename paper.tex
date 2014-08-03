@@ -1,0 +1,190 @@
+%-----------------------------------------------------------------------------
+%
+%               Template for sigplanconf LaTeX Class
+%
+% Name:         sigplanconf-template.tex
+%
+% Purpose:      A template for sigplanconf.cls, which is a LaTeX 2e class
+%               file for SIGPLAN conference proceedings.
+%
+% Guide:        Refer to "Author's Guide to the ACM SIGPLAN Class,"
+%               sigplanconf-guide.pdf
+%
+% Author:       Paul C. Anagnostopoulos
+%               Windfall Software
+%               978 371-2316
+%               paul@windfall.com
+%
+% Created:      15 February 2005
+%
+%-----------------------------------------------------------------------------
+
+
+\documentclass[preprint]{sigplanconf}
+
+% The following \documentclass options may be useful:
+%
+% 10pt          To set in 10-point type instead of 9-point.
+% 11pt          To set in 11-point type instead of 9-point.
+% authoryear    To obtain author/year citation style instead of numeric.
+
+%\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[style=alphabetic, sorting=nyt]{biblatex}
+\addbibresource{bibliography.bib}
+
+\lstset{
+  language=Lisp,                % choose the language of the code
+  columns=fixed,basewidth=.5em,
+  basicstyle=\small\ttfamily,       % the size of the fonts that are used for the code
+  %numbers=left,                   % where to put the line-numbers
+  %numberstyle=\small\ttfamily,      % the size of the fonts that are used for the line-numbers
+  %stepnumber=1,                   % the step between two line-numbers. If it is 1 each line will be numbered
+  %numbersep=5pt,                  % how far the line-numbers are from the code
+  %backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+  %showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  %showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=single,           % adds a frame around the code
+  %tabsize=2,          % sets default tabsize to 2 spaces
+  captionpos=t,           % sets the caption-position to bottom
+  breaklines=true,        % sets automatic line breaking
+  breakatwhitespace=true,    % sets if automatic breaks should only happen at whitespace
+  %escapeinside={\%*}{*)},          % if you want to add a comment within your code
+}
+
+\begin{document}
+
+\conferenceinfo{WXYZ '05}{date, City.} 
+\copyrightyear{2014}
+\copyrightdata{[to be supplied]} 
+
+%\titlebanner{banner above paper title}        % These are ignored unless
+\preprintfooter{short description of paper}   % 'preprint' option specified.
+
+\title{Title}
+%\subtitle{Subtitle Text, if any}
+
+\authorinfo{Author1 Name}
+           {Company}
+           {Email@gmail.com}
+
+\authorinfo{Author2 Name}
+           {Company}
+           {Email@gmail.com}
+
+\maketitle
+
+% Molehills, not mountains! - SPJ
+% ie. don't try and solve everything ambitiously,
+% attack a very specific problem with specific examples
+
+% 1st page
+%
+% 1. Intro
+% - write *explicitly* "the main idea of this paper is"
+%   - but only once you have set up enough scaffolding for context
+% 2. Contributions
+% - write early, and rewrite
+%   - need to know what the contributions are early
+% - list of contributions drive everything in the paper
+% - consider bullet points
+%   - make it *so* easy to read
+%   - *don't* lose readers here
+% - *every* claim has a forward reference to *evidence* that supports the claim
+% - pg 1 = spec, rest of paper = impl
+% - Contributions *must* be *refutable*
+%    - NOT We describe/study the properties of this type system
+%    - YES We prove the soundness of ...
+%    - *crunchy!* refutable contributions
+%      - "think celery, not soggy pasta claims!"
+% 
+% Give citations *during the paper* (or, we will discuss this related work in section ..)
+% "You know all about the literature! You're just getting there at the end.. (of the paper)"
+
+% - Related work
+%   - don't make other people's work look bad!
+%   - you have unlimited love to spread around
+%   - praise inspiring papers!
+%     - credit to the author
+%     - it won't make your work looks worse
+%   - "in this dimension, our work is better (worse!!)"
+%     - point out your shortcomings before your reviews
+%     - not just honest/scholarly, just good tactics
+
+% Put your readers first
+% - "the middle section"
+%   - easier to write (the stuff in your head)
+% - don't present the general solution first
+%   - "Consider a semilattice B over hyperstructural interposed structure C ...."
+%   - might be obvious to you (you've learnt this!) but not *motivating* for readers
+%   - what would you do at the whiteboard?
+%     - explain the intuition *first*
+%     - even if the reader leaves the paper here, they still still take something away
+% - Conveying the intuition
+%   - examples! (at the whiteboard..)
+%   - we can't help giving examples in conversation, but in papers we can't help giving the general case first!!
+
+% Don't bring your readers down blind alleys
+% - research is soaked in (your) blood
+%   - don't bring your readers down the dead ends
+% - *only* explore bind alleys that are *so* obvious the reader is itching to correct you as you explain your
+%   solution!
+
+\begin{abstract}
+  % https://plg.uwaterloo.ca/~migod/research/beckOOPSLA.html
+\end{abstract}
+
+%\category{CR-number}{subcategory}{third-level}
+
+% - what is the problem?
+% - why is it interesting, challenging, important?
+% - what have others done before?
+% - what did you do?
+% - how did you evaluate it?
+% - what contribution have you made?
+% - how would you continue this in the future?
+
+%\terms
+%term1, term2
+
+%\keywords
+%keyword1, keyword2
+
+\section*{Introduction}
+
+% Start immediately with an example, like at a whiteboard
+
+Here's how to make an inline code sample: \lstinline|lift-chan|.
+
+\begin{lstlisting}
+;; A normal code listing.
+(inc 1)
+\end{lstlisting}
+
+This is how to cite~\cite{Tob10} something.
+
+% Contributions
+
+Here are our main contributions.
+
+\begin{itemize}
+  \item We discuss (Section~\ref{first})
+  \item We demonstrate (Section~\ref{second})
+\end{itemize}
+
+\section{First section}
+\label{first}
+
+\section{Second section}
+\label{second}
+
+\begin{lstlisting}[float]
+;; How to make a floating listing
+(+ 1 2)
+\end{lstlisting}
+
+\printbibliography[title=References]
+
+\end{document}
